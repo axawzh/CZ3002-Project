@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Announcement extends Model
 {
-    protected $fillable = [
-        'description', 'creationDateTime', 'creator', 'groupId'
-    ];
+	protected $fillable = ['title','post'];
+    //
 }
