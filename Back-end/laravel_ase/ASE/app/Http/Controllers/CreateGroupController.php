@@ -39,18 +39,18 @@ class CreateGroupController extends BaseController
 //        DB::table('group_user')->insert(['userId' => $admin, 'groupId' => $groupId]);
 //    }
 
-    function addAcademicGroup()
+    function addAcademicGroup(Request $request)
     {
-        $this->addGroup();
-        $groupId = $this->getGroupId();
-        $indexId = $this->getIndexId();
+        $this->addGroup($request);
+        $groupId = $this->getGroupId($request);
+        $indexId = $this->getIndexId($request);
         DB::table('academic_group')->insert(['groupId' => $groupId, 'indexId' => $indexId]);
     }
 
     function addNonAcademicGroup(Request $request)
     {
-        $this->addGroup();
-        $groupId = $this->getGroupId();
+        $this->addGroup($request);
+        $groupId = $this->getGroupId($request);
         $category = $request->input('category');
         DB::table('non_academic_group')->insert(['groupId' => $groupId, 'category' => $category]);
     }
