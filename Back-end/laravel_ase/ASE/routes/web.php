@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', [
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/home', [
     'uses' => 'HomeConroller@homeView'
 ]);
+Auth::routes();
+
+Route::get('/grouppage', 'HomeController@index')->name('grouppage');
+Route::resource('groups', 'GroupController');
+Route::resource('conversations', 'ConversationController');
+Route::resource('announcement', 'announcementController');
