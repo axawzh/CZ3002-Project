@@ -12,7 +12,7 @@
             <div class="panel-collapse collapse" :id="'collapseOne-' + group.id">
                 <div class="panel-body chat-panel">
                     <ul class="chat">
-                        <li v-for="conversation in conversations">
+                        <li v-for="conversation in conversations" :key="conversation.id">
                         <!-- <span class="chat-img pull-left">
                             <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
                         </span> -->

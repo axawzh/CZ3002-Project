@@ -8,7 +8,7 @@
                 </div>
                 <div class="form-group">
                     <select v-model="users" multiple id="friends">
-                        <option v-for="user in initialUsers" :value="user.id">
+                        <option v-for="user in initialUsers" :value="user.id" :key="user.id">
                             {{ user.name }}
                         </option>
                     </select>
