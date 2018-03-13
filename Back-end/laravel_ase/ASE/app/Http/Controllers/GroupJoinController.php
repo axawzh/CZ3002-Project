@@ -10,7 +10,7 @@ class GroupJoinController extends Controller
 {
     public function join($groupId) {
         $isFreeJoin = Group::where('groupId', $groupId) -> first() -> pluck('isFreeJoin');
-        $user = Auth()::user();
+        $user = auth()->user();
 
         // Free join
         if ($isFreeJoin == 1) {
