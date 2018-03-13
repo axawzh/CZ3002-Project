@@ -14,8 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/creategroup', function () {
+    return view('creategroup');
+});
+
+Route::post('/creategroup', "CreateGroupController@addAcademicGroup");
+
 Route::get('/home', [
-    'uses' => 'HomeConroller@homeView'
+    'uses' => 'HomeController@homeView'
 ]);
 Auth::routes();
 
