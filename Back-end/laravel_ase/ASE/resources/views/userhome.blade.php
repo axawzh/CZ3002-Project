@@ -37,23 +37,23 @@
 
         </div>
         @endforeach
-            @foreach($nonAcademicGroups as $nonAcaGroup)
-                <div class="card">
-                    <div class="card-title">
-                        <h2><b>{{$nonAcaGroup['groupName']}}</b></h2>
-                    </div>
-                    <div class="card-category">
-                        <p>Category: {{$nonAcaGroup['category']}}</p>
-                    </div>
-                    <div class="card-description">
-                        <p>{{$nonAcaGroup['description']}}</p>
-                    </div>
-                    <div class="card-groupsize">
-                        <p>Group size: {{$nonAcaGroup['groupSize']}}</p>
-                    </div>
-                    <a href="{{url('/grouppage/'.$nonAcaGroup['groupId'])}}">Enter</a>
+        @foreach($nonAcademicGroups as $nonAcaGroup)
+            <div class="card">
+                <div class="card-title">
+                    <h2><b>{{$nonAcaGroup['groupName']}}</b></h2>
                 </div>
-            @endforeach
+                <div class="card-category">
+                    <p>Category: {{$nonAcaGroup['category']}}</p>
+                </div>
+                <div class="card-description">
+                    <p>{{$nonAcaGroup['description']}}</p>
+                </div>
+                <div class="card-groupsize">
+                    <p>Group size: {{$nonAcaGroup['groupSize']}}</p>
+                </div>
+                <a href="{{url('/grouppage/'.$nonAcaGroup['groupId'])}}">Enter</a>
+            </div>
+        @endforeach
     </div>
 </div>
 @endsection
