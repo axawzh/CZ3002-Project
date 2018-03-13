@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGroupUserTable extends Migration
+class AddIsFreeJoinToGroups extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateGroupUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('group_user', function (Blueprint $table) {
-            $table->increments('id');
-			$table->integer('userId');
-			$table->integer('groupId');
-            $table->timestamps();
+        // false - need leader permission, true - free join
+        Schema::table('group', function(Blueprint $table) {
+            $table->boolean('isFreeJoin');
         });
     }
 
@@ -28,6 +26,9 @@ class CreateGroupUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group_user');
+        //
+        Schema::table('group', function (Blueprint $table) {
+            $table->dropColumn('isFreeJoin');
+        });
     }
 }
