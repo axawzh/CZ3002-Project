@@ -16,8 +16,10 @@
         <textarea name="post" rows="8" cols="80"></textarea>
       </div>
     </div>
+	
     <div class="form-group row">
       <div class="col-md-2"></div>
+	  <input type="hidden" name="id" value={{$id}} >
       <input type="submit" class="btn btn-primary">
     </div>
   </form>

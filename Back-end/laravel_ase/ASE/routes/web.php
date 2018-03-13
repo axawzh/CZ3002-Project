@@ -26,7 +26,7 @@ Route::get('/home', [
 ]);
 Auth::routes();
 
-Route::get('/grouppage', 'HomeController@index')->name('grouppage');
+Route::get('/grouppage/{id}', 'HomeController@index');
 Route::resource('groups', 'GroupController');
 Route::resource('conversations', 'ConversationController');
 Route::resource('announcement', 'announcementController');

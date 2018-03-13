@@ -24,16 +24,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $groups = auth()->user()->groups->where('name', 'test 1');
+        $groups = auth()->user()->groups->where('id', $id);
 
         $users = User::where('id', '<>', auth()->user()->id)->get();
         $user = auth()->user();
-   $cruds = Announcement::all()->toArray();
+   $cruds = Announcement::where('groupId',$id)->get();
 
 
-        return view('grouppage', ['groups' => $groups, 'users' => $users, 'user' => $user,'cruds'=>$cruds]);
+        return view('grouppage', ['groups' => $groups, 'users' => $users, 'user' => $user,'cruds'=>$cruds,'id' => $id ]);
     }
 
     public function homeView() {
