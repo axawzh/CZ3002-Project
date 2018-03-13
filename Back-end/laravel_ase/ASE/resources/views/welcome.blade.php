@@ -5,7 +5,7 @@
     <div class="header">
         <div class="title-wrapper">
             <div class="title">My Groups</div>
-            <div class="subtitle">15 Groups</div>
+            <div class="subtitle">14 Groups</div>
         </div>
         <div class="options">
             <div class="label">Sort by</div>

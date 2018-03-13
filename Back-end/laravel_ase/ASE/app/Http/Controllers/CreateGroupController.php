@@ -33,11 +33,11 @@ class CreateGroupController extends BaseController
         return $indexId;
     }
 
-//    function addGroupUser($admin)
-//    {
-//        $groupId = $this->getGroupId();
-//        DB::table('group_user')->insert(['userId' => $admin, 'groupId' => $groupId]);
-//    }
+    function addGroupUser($admin)
+    {
+        $groupId = $this->getGroupId();
+        DB::table('members')->insert(['userId' => $admin, 'groupId' => $groupId]);
+    }
 
     function addAcademicGroup(Request $request)
     {
