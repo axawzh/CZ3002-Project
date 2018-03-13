@@ -21,3 +21,5 @@ Route::get('/grouppage', 'HomeController@index')->name('grouppage');
 Route::resource('groups', 'GroupController');
 Route::resource('conversations', 'ConversationController');
 Route::resource('announcement', 'announcementController');
+
+Route::get('/group/join/{id}', 'GroupJoinController@join');
