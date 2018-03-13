@@ -3,7 +3,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Providers\Group;
+use App\Main_group;
 use Illuminate\Routing\Controller as BaseController;
 
 class CreateGroupController extends BaseController
@@ -15,7 +15,7 @@ class CreateGroupController extends BaseController
         $description = $request->input('description');
         $admin = Auth::users()->id();
         $groupSize = $request->input('groupSize');
-        DB::table('group')->insert(['groupName' => $groupName, 'description' => $description, 'admin' => $admin, 'groupSize' => $groupSize]);
+        DB::table('main_groups')->insert(['groupName' => $groupName, 'description' => $description, 'admin' => $admin, 'groupSize' => $groupSize]);
         $this->addGroupUser($admin);
     }
 
@@ -33,11 +33,11 @@ class CreateGroupController extends BaseController
         return $indexId;
     }
 
-    function addGroupUser($admin)
-    {
-        $groupId = $this->getGroupId();
-        DB::table('members')->insert(['userId' => $admin, 'groupId' => $groupId]);
-    }
+//    function addGroupUser($admin)
+//    {
+//        $groupId = $this->getGroupId();
+//        DB::table('group_user')->insert(['userId' => $admin, 'groupId' => $groupId]);
+//    }
 
     function addAcademicGroup(Request $request)
     {
