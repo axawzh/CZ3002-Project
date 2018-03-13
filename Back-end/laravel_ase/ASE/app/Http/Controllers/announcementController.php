@@ -39,11 +39,12 @@ class announcementController extends Controller
     {
         $crud = new Announcement([
           'title' => $request->get('title'),
-          'post' => $request->get('post')
+          'post' => $request->get('post'),
+		  'groupId' => $request->get('id')
         ]);
 
         $crud->save();
-        return redirect('/home');
+        return redirect('/grouppage/'.$request->get('id'));
     }
 
     /**

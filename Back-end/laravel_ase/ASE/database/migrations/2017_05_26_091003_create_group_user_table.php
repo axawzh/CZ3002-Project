@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnnouncementTable extends Migration
+class CreateGroupUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateAnnouncementTable extends Migration
      */
     public function up()
     {
-        Schema::create('announcement', function (Blueprint $table) {
+        Schema::create('group_user', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('description');
-			$table->timestamp('creationDateTime');
-			$table->integer('creator');
-			$table->integer('groupId');
+            $table->unsignedInteger('group_id');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateAnnouncementTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('announcement');
+        Schema::dropIfExists('group_user');
     }
 }
