@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', [
-    'uses' => 'HomeConroller@homeView'
+    'uses' => 'HomeController@homeView'
 ]);
 Auth::routes();
 
