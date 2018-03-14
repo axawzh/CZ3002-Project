@@ -14,7 +14,7 @@ class AddIsFreeJoinToGroups extends Migration
     public function up()
     {
         // false - need leader permission, true - free join
-        Schema::table('group', function(Blueprint $table) {
+        Schema::table('main_groups', function(Blueprint $table) {
             $table->boolean('isFreeJoin');
         });
     }
@@ -27,7 +27,7 @@ class AddIsFreeJoinToGroups extends Migration
     public function down()
     {
         //
-        Schema::table('group', function (Blueprint $table) {
+        Schema::table('main_groups', function (Blueprint $table) {
             $table->dropColumn('isFreeJoin');
         });
     }

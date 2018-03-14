@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\GroupUser;
 use App\JoinRequest;
+use App\Main_group;
 use Illuminate\Http\Request;
 use App\Group;
 
 class GroupJoinController extends Controller
 {
     public function join($groupId) {
-        $isFreeJoin = Group::where('groupId', $groupId) -> first() -> pluck('isFreeJoin');
+        $isFreeJoin = Main_group::where('groupId', $groupId) -> first() -> pluck('isFreeJoin');
         $user = auth()->user();
 
         // Free join
@@ -18,6 +20,12 @@ class GroupJoinController extends Controller
             $cruds = new Member([
                 'userId' => $user->id,
                 'groupId' => $groupId
+            ]);
+            $cruds->save();
+
+            $cruds = new GroupUser([
+                'user_id' => $user->id,
+                'group_id' => $groupId
             ]);
             $cruds->save();
         }

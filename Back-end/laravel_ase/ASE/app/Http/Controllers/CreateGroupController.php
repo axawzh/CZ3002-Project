@@ -22,7 +22,7 @@ class CreateGroupController extends BaseController
     function getGroupId(Request $request)
     {
         $groupName = $request->input('groupName');
-        $groupId = DB::table('group')->where ('groupName', $groupName)->value('id');
+        $groupId = DB::table('main_groups')->where ('groupName', $groupName)->value('id');
         return $groupId;
     }
 
