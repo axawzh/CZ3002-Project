@@ -12,6 +12,7 @@
             <div class="title">My Groups</div>
             <div class="subtitle">{{sizeof($academicGroups) + sizeof($nonAcademicGroups)}} Groups</div>
             <a href="{{url('/creategroup')}}">Create a Group</a>
+            <a href="{{url('/search')}}">Find a Group</a>
         </div>
         <div class="options">
             <div class="label">Sort by</div>

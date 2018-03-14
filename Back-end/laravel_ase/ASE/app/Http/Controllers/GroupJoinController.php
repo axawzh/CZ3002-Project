@@ -5,17 +5,29 @@ namespace App\Http\Controllers;
 use App\GroupUser;
 use App\JoinRequest;
 use App\Main_group;
+use App\Member;
 use Illuminate\Http\Request;
 use App\Group;
 
 class GroupJoinController extends Controller
 {
     public function join($groupId) {
-        $isFreeJoin = Main_group::where('groupId', $groupId) -> first() -> pluck('isFreeJoin');
+        $isFreeJoin = Main_group::where('id', $groupId) -> first() -> pluck('isFreeJoin');
         $user = auth()->user();
 
+        $already_joined = Member::where([
+            ['userId', '=', $user->id],
+            ['groupId', '=', $groupId]
+        ]);
+
+        // User is already in the group!!!
+        if($already_joined->first()) {
+            $reasonStirng = 'You have already joined the group before!';
+            return view('joinfailed')->with('reason', $reasonStirng);
+        }
+
         // Free join
-        if ($isFreeJoin == 1) {
+        if ($isFreeJoin == true) {
             // Join directly
             $cruds = new Member([
                 'userId' => $user->id,
