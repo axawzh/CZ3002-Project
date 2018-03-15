@@ -32,3 +32,5 @@ Route::resource('conversations', 'ConversationController');
 Route::resource('announcement', 'announcementController');
 
 Route::get('/group/join/{id}', 'GroupJoinController@join');
+Route::get('/search', 'GroupSearchController@index');
+Route::post('/search', 'GroupSearchController@post');

@@ -6,3 +6,8 @@
 /build
 /captures
 .externalNativeBuild
+
+# some local installer files
+bin
+composer.phar
+composer-setup.php

@@ -17,7 +17,7 @@ class CreateMembersTable extends Migration
             $table->unsignedInteger('userId');
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedInteger('groupId');
-            $table->foreign('groupId')->references('id')->on('group')->onDelete('cascade');
+            $table->foreign('groupId')->references('id')->on('main_groups')->onDelete('cascade');
             $table->timestamps();
         });
     }
