@@ -11,7 +11,7 @@
         <div class="title-wrapper">
             <div class="title">My Groups</div>
             <div class="subtitle">{{sizeof($academicGroups) + sizeof($nonAcademicGroups)}} Groups</div>
-            <a href="{{url('/creategroup')}}">Create a Group</a>
+            <a href="{{url('/creategroup')}}" class="create-group-button">+</a>
         </div>
         <div class="options">
             <div class="label">Sort by</div>
@@ -23,21 +23,26 @@
         </div>
     </div>
     <div class="cards-container">
-        @foreach($academicGroups as $acaGroup)
-        <div class="card">
-            <div class="card-title">
-                <h2><b>{{$acaGroup['groupName']}}</b></h2>
-            </div>
-            <div class="card-description">
-                <p>{{$acaGroup['description']}}</p>
-            </div>
-            <div class="card-groupsize">
-                <p>Group size: {{$acaGroup['groupSize']}}</p>
-            </div>
-            <a href="{{url('/grouppage', ['groupId'=>$acaGroup['groupId']])}}">Enter</a>
+        @if (sizeof($academicGroups) + sizeof($nonAcademicGroups))
+            @foreach($academicGroups as $acaGroup)
+            <div class="card">
+                <div class="card-title">
+                    <h2><b>{{$acaGroup['groupName']}}</b></h2>
+                </div>
+                <div class="card-description">
+                    <p>{{$acaGroup['description']}}</p>
+                </div>
+                <div class="card-groupsize">
+                    <p>Group size: {{$acaGroup['groupSize']}}</p>
+                </div>
+                <a href="{{url('/grouppage', ['groupId'=>$acaGroup['groupId']])}}">Enter</a>
 
-        </div>
-        @endforeach
+            </div>
+            @endforeach
+        @else
+            <div>You have no group</div>
+        @endif
+
         @foreach($nonAcademicGroups as $nonAcaGroup)
             <div class="card">
                 <div class="card-title">
