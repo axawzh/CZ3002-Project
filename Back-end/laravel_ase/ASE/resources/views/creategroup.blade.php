@@ -1,21 +1,44 @@
 @extends('layouts.app')
 
 @section('content')
-        <h1>
-            Please choose the type of group to create:
-        </h1>
+    <div class="content-container">
+        <div class="header">
+            <div class="title-wrapper">
+                <div class="title">Create Group</div>
+            </div>
+        </div>
 
-
-    <form name="creategroup" action="/creategroup" method="post">
-        {{ csrf_field() }}
-        <input type="radio" name="type" value="academic">Academic
-        <input type="radio" name="type" value="nonacademic">Non-academic<br>
-
-
-        Group Name: <input type="text" name="groupName"> <br>
-        Description: <input type="text" name="description"><br>
-        Index: <input type="text" name="indexNo"><br>
-        Permission: <input type="radio" name="permission" value="Free" checked>Free <input type="radio" name="permission" value="ask">Ask<br>
-        <input type="submit" name="submit" value="Submit">
-    </form>
+        <div class="form-container">
+            <form name="creategroup" action="/creategroup" method="post" class="form create-group">
+                {{ csrf_field() }}
+                <div class="subtitle">Please choose the type of group to create:</div>
+                <div class="input-wrapper">
+                    <input type="radio" name="type" value="academic" class="radio-button"><div class="radio-label">Academic</div>
+                    <input type="radio" name="type" value="nonacademic" class="radio-button"><div class="radio-label">Non-academic</div>
+                </div>
+                <hr>
+                <div class="input-wrapper">
+                    <div class="label">Group Name:</div>
+                    <input type="text" name="groupName" class="text-field"/>
+                </div>
+                <div class="input-wrapper">
+                    <div class="label">Description:</div>
+                    <textarea type="text" name="description" class="text-field"></textarea>
+                </div>
+                <div class="input-wrapper">
+                    <div class="label">Index:</div>
+                    <input type="text" name="indexNo" class="text-field"/>
+                </div>
+                <div class="input-wrapper">
+                    <div class="label">Permission:</div>
+                    <input type="radio" name="permission" value="Free" class="radio-button"><div class="radio-label">Free</div>
+                    <input type="radio" name="permission" value="ask" class="radio-button"><div class="radio-label">Ask</div>
+                </div>
+                <hr>
+                <div class="input-wrapper right-aligned no-padding">
+                    <input type="submit" name="submit" value="Submit" class="submit-button">
+                </div>
+            </form>
+        </div>
+    </div>
 @endsection
