@@ -9,4 +9,6 @@ class Index extends Model
     protected $fillable = [
         'indexNo', 'noOfGroup', 'groupSize', 'courseCode'
     ];
+
+    protected $table = "index";
 }

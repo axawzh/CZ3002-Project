@@ -31,7 +31,7 @@
                 </div>
                 <div class="input-wrapper">
                     <div class="label">Permission:</div>
-                    <input type="radio" name="permission" value="Free" class="radio-button"><div class="radio-label">Free</div>
+                    <input type="radio" name="isFreeJoin" value="Free" class="radio-button"><div class="radio-label">Free</div>
                     <input type="radio" name="permission" value="ask" class="radio-button"><div class="radio-label">Ask</div>
                 </div>
                 <hr>

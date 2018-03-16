@@ -19,6 +19,7 @@ class CreateMainGroupsTable extends Migration
 			$table->string('description');
 			$table->integer('admin');
 			$table->integer('groupSize');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ class CreateMainGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group');
+        Schema::dropIfExists('main_groups');
     }
 }

@@ -9,4 +9,6 @@ class AcademicGroup extends Model
     protected $fillable = [
         'groupId', 'indexId'
     ];
+
+    protected $table = "academic_group";
 }

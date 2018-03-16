@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Main_group extends Model
 {
-	protected $fillable = ['name'];
+	protected $fillable = ['groupName', 'description', 'admin', 'groupSize', 'isFreeJoin'];
     //
 }
