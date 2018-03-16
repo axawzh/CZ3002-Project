@@ -15,7 +15,7 @@
         Group Name: <input type="text" name="groupName"> <br>
         Description: <input type="text" name="description"><br>
         Index: <input type="text" name="indexNo"><br>
-        Permission: <input type="radio" name="permission" value="Free" checked>Free <input type="radio" name="permission" value="ask">Ask<br>
+        Permission: <input type="radio" name="isFreeJoin" value="Free" checked>Free <input type="radio" name="permission" value="ask">Ask<br>
         <input type="submit" name="submit" value="Submit">
     </form>
 @endsection
