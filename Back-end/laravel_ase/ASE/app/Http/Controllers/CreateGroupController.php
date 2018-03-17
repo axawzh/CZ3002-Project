@@ -14,6 +14,19 @@ use Illuminate\Routing\Controller as BaseController;
 class CreateGroupController extends BaseController
 {
 
+    function index(Request $request)
+    {
+        $type = $request->input('type');
+        if ($type == "academic")
+        {
+            $this->addNonAcademicGroup($request);
+        }
+        else if ( $type == "nonacademic")
+        {
+            $this->addAcademicGroup($request);
+        }
+    }
+
     function addGroup(Request $request)
     {
         $groupName = $request->input('groupName');
