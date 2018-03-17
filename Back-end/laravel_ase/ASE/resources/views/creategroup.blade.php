@@ -13,7 +13,7 @@
                 {{ csrf_field() }}
                 <div class="subtitle">Please choose the type of group to create:</div>
                 <div class="input-wrapper">
-                    <input type="radio" name="type" value="academic" class="radio-button"><div class="radio-label">Academic</div>
+                    <input type="radio" name="type" value="academic" class="radio-button" checked><div class="radio-label">Academic</div>
                     <input type="radio" name="type" value="nonacademic" class="radio-button"><div class="radio-label">Non-academic</div>
                 </div>
                 <hr>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="input-wrapper">
                     <div class="label">Description:</div>
-                    <textarea type="text" name="description" class="text-field"></textarea>
+                    <textarea type="text" name="description" class="text-field" maxlength="190"></textarea>
                 </div>
                 <div class="input-wrapper">
                     <div class="label">Index:</div>
@@ -31,8 +31,8 @@
                 </div>
                 <div class="input-wrapper">
                     <div class="label">Permission:</div>
-                    <input type="radio" name="isFreeJoin" value="Free" class="radio-button"><div class="radio-label">Free</div>
-                    <input type="radio" name="permission" value="ask" class="radio-button"><div class="radio-label">Ask</div>
+                    <input type="radio" name="isFreeJoin" value="free" class="radio-button" checked><div class="radio-label">Free</div>
+                    <input type="radio" name="isFreeJoin" value="ask" class="radio-button"><div class="radio-label">Ask</div>
                 </div>
                 <hr>
                 <div class="input-wrapper right-aligned no-padding">
