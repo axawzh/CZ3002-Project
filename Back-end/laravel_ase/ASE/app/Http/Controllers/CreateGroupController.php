@@ -38,8 +38,8 @@ class CreateGroupController extends BaseController
 //        else
 //            $groupSize = $request->input('groupSize');
         $groupSize = 5;
-        $isFreeJoin = $request->input('isFreeJoin');
-        $crud = new Main_group(['groupName' => $groupName, 'description' => $description, 'admin' => $admin, 'groupSize' => $groupSize, '$isFreeJoin' => $isFreeJoin]);
+        $isFreeJoin = $request->input('isFreeJoin') == 'free';
+        $crud = new Main_group(['groupName' => $groupName, 'description' => $description, 'admin' => $admin, 'groupSize' => $groupSize, 'isFreeJoin' => $isFreeJoin]);
         $crud->save();
     }
 

@@ -8,8 +8,8 @@
             <div class="title">Search Groups</div>
             <form action="{{url('/search')}}" method="post">
                 {{ csrf_field() }}
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit">Search</button>
+                <input type="text" placeholder="Search.." name="search" class="searchbar">
+                <button type="submit" class="search-button">Search</button>
             </form>
         </div>
         <div class="options">
