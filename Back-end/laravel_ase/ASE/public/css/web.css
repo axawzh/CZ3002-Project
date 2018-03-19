@@ -62,7 +62,7 @@ body {
     background-color: #555;
 }
 
-#app {
+#app-container {
     background-color: #343642;
     min-height: 100vh;
 }
@@ -154,8 +154,12 @@ body {
 .options .select {
     border: none;
     background-color: rgba(0,0,0,0);
-    color: white;
+    color: #232222;
     font-size: 16px;
+}
+
+.options .select.dark {
+    color: white;
 }
 
 .cards-container {
@@ -227,12 +231,12 @@ body {
     width: 300px;
 }
 
-.card-title-wrapper .card-title {
+.card .card-title {
     font-size: 24px;
     font-weight: 600;
 }
 
-.card-title-wrapper .card-subtitle {
+.card .card-subtitle {
     font-size: 16px;
     opacity: .7;
 }
@@ -317,10 +321,14 @@ body {
     color: white;
 }
 
-.form.create-group {
+.form {
     padding: 20px;
-    background: #FBFBFB;
     border-radius: 5px;
+}
+
+.form.create-group,
+.form.create-announcement {
+    background: #FBFBFB;
     box-shadow: 0 5px 30px rgba(0,0,0,.8);
 }
 
@@ -387,6 +395,11 @@ body {
     box-shadow: 0 5px 15px -2px rgba(80,60,10,.3);
 }
 
+.form-container .title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
 .input-wrapper.right-aligned {
     justify-content: flex-end;
 }
@@ -401,4 +414,34 @@ body {
     border-radius: 5px;
     color: white;
     background-color: #3097D1F0;
+}
+
+.announcements-container .card {
+    display: flex;
+    min-height: 100px;
+    padding-bottom: 50px;
+}
+
+.announcements-container .card .card-title {
+    padding-right: 50px;
+}
+
+.announcements-container {
+    /* max-width: 600px; */
+}
+
+.announcements-container .form-container {
+    margin: 10px;
+}
+
+.group-page {
+    display: flex;
+}
+
+.group-page .chat-box {
+    flex-grow: 1;
+    width: 400px;
+    position: fixed;
+    right: 0;
+    bottom: -20px;
 }
