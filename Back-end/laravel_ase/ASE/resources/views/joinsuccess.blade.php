@@ -74,7 +74,7 @@
                 Redirecting to group page...
                 <script>
                     var timer = setTimeout(function() {
-                        window.location='{{ url('/group/'.$groupId) }}'
+                        window.location='{{ url('/home') }}'
                     }, 5000);
                 </script>
             </div>

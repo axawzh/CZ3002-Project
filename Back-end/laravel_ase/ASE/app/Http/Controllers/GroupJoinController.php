@@ -40,6 +40,8 @@ class GroupJoinController extends Controller
                 'group_id' => $groupId
             ]);
             $cruds->save();
+
+            return view('joinsuccess', ['groupId' => $groupId]);
         }
         // Need permission
         else {
