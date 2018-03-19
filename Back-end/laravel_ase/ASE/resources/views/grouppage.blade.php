@@ -5,7 +5,7 @@
   <div class="header">
     <div class="title-wrapper">
       <div class="title">{{$groups[0]['name']}}</div>
-      <a href="{{url('/creategroup')}}" class="manage-group-button">Manage</a>
+      <a href="{{url('/managegroup', ['groupId'=>$groups[0]['id']])}}" class="manage-group-button">Manage</a>
     </div>
   </div>
   <div class="group-page">
