@@ -11,7 +11,7 @@
         </div>
         <div class="options">
             <div class="label">Sort by</div>
-            <select class="select">
+            <select class="select dark">
                 <option selected>Last update</option>
                 <option>Name</option>
                 <option>Group size</option>
