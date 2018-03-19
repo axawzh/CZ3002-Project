@@ -1,31 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="content-container">
-    <div class="header">
+<div class="welcome">
+    <div class="section">
         <div class="title-wrapper">
             <div class="title">My Groups</div>
             <div class="subtitle">15 Groups</div>
         </div>
-        <div class="options">
-            <div class="label">Sort by</div>
-            <select class="select">
-                <option selected>Last update</option>
-                <option>Name</option>
-                <option>Group size</option>
-            </select>
+        <div class="description">
+            Shallow rendering is useful to constrain yourself to testing a component as a unit, and to ensure that your tests aren't indirectly asserting on behavior of child components. As of Enzyme v3, the shallow API does call React lifecycle methods such as componentDidMount and componentDidUpdate. You can read more about this in the version 3 migration guide.
         </div>
     </div>
-    <div class="cards-container">
-        <div class="card">
-            <div class="notification-badge">3</div>
-        </div>
-        <div class="card">
-            <div class="notification-badge">3</div>
-        </div>
-        <div class="card">
-            <div class="notification-badge">3</div>
-        </div>
+    <div class="login-container">
+        <a href="/login"><div class="login-button button">Login</div></a>
+        <a href="/register"><div class="signup-button button">Signup</div></a>
     </div>
 </div>
 @endsection
