@@ -15,7 +15,7 @@
     <link href="{{ asset('css/web.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div>
+    <div id="app-container">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
