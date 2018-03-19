@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" id="app">
   <form action="http://localhost:8000/announcement" method="post">
     <div class="form-group row">
       {{ csrf_field() }}
