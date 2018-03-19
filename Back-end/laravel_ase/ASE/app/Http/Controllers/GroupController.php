@@ -22,4 +22,8 @@ class GroupController extends Controller
         return $group;
     }
 
+    public function post() {
+
+    }
+
 }

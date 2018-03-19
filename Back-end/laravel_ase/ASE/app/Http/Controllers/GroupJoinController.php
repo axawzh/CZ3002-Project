@@ -26,6 +26,14 @@ class GroupJoinController extends Controller
             return view('joinfailed')->with('reason', $reasonStirng);
         }
 
+        // Check if the group full already
+        $groupLimit = Main_group::where('id', $groupId) -> first() -> pluck('groupSize');
+        $memberNumber = Member::where('groupId', $groupId).count();
+        if ($memberNumber >= $groupLimit) {
+            $reasonStirng = 'Group is full!';
+            return view('joinfailed')->with('reason', $reasonStirng);
+        }
+
         // Free join
         if ($isFreeJoin == true) {
             // Join directly
@@ -96,6 +104,12 @@ class GroupJoinController extends Controller
             // change the resolve state
             $join_request->isResolved = 1;
             $join_request->save();
+
+            $cruds1 = new GroupUser([
+                'user_id' => $userId,
+                'group_id' => $groupId
+            ]);
+            $cruds1->save();
         }
         else {
             // find the record
