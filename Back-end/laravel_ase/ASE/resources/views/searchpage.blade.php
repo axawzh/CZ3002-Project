@@ -24,16 +24,16 @@
     <div class="cards-container">
         @foreach($grouplist as $group)
             <div class="card">
-                <div class="card-title">
-                    <h2><b>{{$group['groupName']}}</b></h2>
+                <div class="title-and-description">
+                    <div class="card-title-wrapper">
+                        <div class="card-title">{{$group['groupName']}}</div>
+                    </div>
+                    <div class="card-description">{{$group['description']}}</div>
                 </div>
-                <div class="card-description">
-                    <p>{{$group['description']}}</p>
+                <div class="actions">
+                    <div class="card-groupsize">Group size: {{$group['groupSize']}}</div>
+                    <a href="{{url('/group/join/'.$group['id'])}}" class="link">Join</a>
                 </div>
-                <div class="card-groupsize">
-                    <p>Group size: {{$group['groupSize']}}</p>
-                </div>
-                <a href="{{url('/group/join/'.$group['id'])}}">Join</a>
             </div>
         @endforeach
     </div>

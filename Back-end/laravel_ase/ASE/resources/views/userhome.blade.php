@@ -49,7 +49,7 @@
                 </div>
                 <div class="actions">
                     <div class="card-groupsize">Group size: {{$nonAcaGroup['groupSize']}}</div>
-                    <a href="{{url('/grouppage/'.$nonAcaGroup['groupId'])}}">Enter</a>
+                    <a href="{{url('/grouppage/'.$nonAcaGroup['groupId'])}}" class="link">Enter</a>
                 <div>
             </div>
         @endforeach

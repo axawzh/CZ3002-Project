@@ -4,7 +4,7 @@
 <div class="container">
   <form action="http://localhost:8000/announcement" method="post">
     <div class="form-group row">
-	{{ csrf_field() }}
+      {{ csrf_field() }}
       <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Title</label>
       <div class="col-sm-10">
         <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="title" name="title">
@@ -42,15 +42,9 @@
     </tbody>
   </table>
     <div class="row">
-
- 
-
-        <div class="col-sm-6">
-            <create-group :initial-users="{{ $users }}"></create-group>
-        </div>
-        <div class="col-sm-6">
-            <groups :initial-groups="{{ $groups }}" :user="{{ $user }}"></groups>
-        </div>
+      <div class="col-sm-6">
+          <groups :initial-groups="{{ $groups }}" :user="{{ $user }}"></groups>
+      </div>
     </div>
 </div>
 @endsection
