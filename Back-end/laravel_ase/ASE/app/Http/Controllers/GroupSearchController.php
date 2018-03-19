@@ -20,8 +20,8 @@ class GroupSearchController extends Controller {
     public function post() {
         if (Input::has('search')) {
             $search_string = Input::get('search');
-            $result_group = Main_group::join('members', 'members.groupId', '=', 'main_groups.id')
-                ->where('groupName', $search_string)
+            $result_group = Main_group::
+                where('groupName', $search_string)
                 ->get();
             return view('searchpage')
                 ->with('grouplist', $result_group);
