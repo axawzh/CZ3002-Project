@@ -69,6 +69,7 @@ class CreateGroupController extends BaseController
         $crud2->save();
         $crud3 = new Member(['userId' => $admin, 'groupId'=> $groupId]);
         $crud3->save();
+        return redirect("/home");
     }
 
     function addNonAcademicGroup(Request $request)
@@ -85,6 +86,7 @@ class CreateGroupController extends BaseController
         $crud1->save();
         $crud2 = new Group(['name' => $groupName]);
         $crud2->save();
+        return redirect("/home");
     }
 
 }
