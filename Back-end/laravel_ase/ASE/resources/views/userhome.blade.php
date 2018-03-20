@@ -11,7 +11,7 @@
         </div>
         <div class="options">
             <div class="label">Sort by</div>
-            <select class="select">
+            <select class="select dark">
                 <option selected>Last update</option>
                 <option>Name</option>
                 <option>Group size</option>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="actions">
                     <div class="card-groupsize">Group size: {{$nonAcaGroup['groupSize']}}</div>
-                    <a href="{{url('/grouppage/'.$nonAcaGroup['groupId'])}}">Enter</a>
+                    <a href="{{url('/grouppage/'.$nonAcaGroup['groupId'])}}" class="link">Enter</a>
                 <div>
             </div>
         @endforeach
