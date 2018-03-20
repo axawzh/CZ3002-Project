@@ -9,7 +9,7 @@
         </div>
 
         <div class="form-container">
-            <form name="creategroup" action="/creategroup" method="post" class="form create-group">
+            <form name="creategroup" action="/home" method="post" class="form create-group">
                 {{ csrf_field() }}
                 <div class="subtitle">Please choose the type of group to create:</div>
                 <div class="input-wrapper">

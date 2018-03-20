@@ -27,8 +27,8 @@ class GroupJoinController extends Controller
         }
 
         // Check if the group full already
-        $groupLimit = Main_group::where('id', $groupId) -> first() -> pluck('groupSize');
-        $memberNumber = Member::where('groupId', $groupId).count();
+        $groupLimit = Main_group::where('id', $groupId) -> first() -> value('groupSize');
+        $memberNumber = Member::where('groupId', $groupId)->count();
         if ($memberNumber >= $groupLimit) {
             $reasonStirng = 'Group is full!';
             return view('joinfailed')->with('reason', $reasonStirng);
