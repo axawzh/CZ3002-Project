@@ -54,9 +54,15 @@
     </template>
 
     <template id="category-input">
-        <div class="input-wrapper" id="form-input-async">
-            <div class="label">Category:</div>
-            <input type="text" name="category" class="text-field"/>
+        <div id="form-input-async">
+            <div class="input-wrapper">
+                <div class="label">Category:</div>
+                <input type="text" name="category" class="text-field"/>
+            </div>
+            <div class="input-wrapper">
+                <div class="label">Group Size:</div>
+                <input type="text" name="groupSize" class="text-field"/>
+            </div>
         </div>
     </template>
 

@@ -4,8 +4,8 @@
 <div class="content-container" id="app">
   <div class="header">
     <div class="title-wrapper">
-      <div class="title">{{$groups[0]['name']}}</div>
-      <a href="{{url('/managegroup', ['groupId'=>$groups[0]['id']])}}" class="manage-group-button">Manage</a>
+      <div class="title">{{$groups['name']}}</div>
+      <a href="{{url('/managegroup', ['groupId'=>$groups['id']])}}" class="manage-group-button">Manage</a>
     </div>
   </div>
   <div class="group-page">

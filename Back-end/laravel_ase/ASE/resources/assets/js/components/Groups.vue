@@ -15,7 +15,7 @@
         },
 
         mounted() {
-            this.groups = this.initialGroups;
+            this.groups = [this.initialGroups];
 
             Bus.$on('groupCreated', (group) => {
                 this.groups.push(group);
