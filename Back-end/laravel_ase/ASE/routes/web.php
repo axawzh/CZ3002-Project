@@ -17,7 +17,7 @@ Route::get('/creategroup', function () {
     return view('creategroup');
 });
 
-Route::post('/creategroup', "CreateGroupController@addAcademicGroup");
+Route::post('/creategroup', "CreateGroupController@index");
 
 Route::get('/home', [
     'uses' => 'HomeController@homeView'

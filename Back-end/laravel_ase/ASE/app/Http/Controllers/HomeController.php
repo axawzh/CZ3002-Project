@@ -27,12 +27,11 @@ class HomeController extends Controller
      */
     public function index($id)
     {
-        $groups = auth()->user()->groups->where('id', $id);
+        $groups = auth()->user()->groups->where('id', $id)->first();
 
         $users = User::where('id', '<>', auth()->user()->id)->get();
         $user = auth()->user();
         $cruds = Announcement::where('groupId',$id)->get();
-
 
         return view('grouppage', ['groups' => $groups, 'users' => $users, 'user' => $user,'cruds'=>$cruds,'id' => $id ]);
     }

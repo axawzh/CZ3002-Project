@@ -17,13 +17,27 @@ use Illuminate\Routing\Controller as BaseController;
 class CreateGroupController extends BaseController
 {
 
+    function index(Request $request)
+    {
+        $type = $request->input('type');
+        if ($type == "academic")
+        $this->addAcademicGroup($request);
+        else
+        $this->addNonAcademicGroup($request);
+        return redirect("/home");
+    }
+
     function addGroup(Request $request)
     {
         $groupName = $request->input('groupName');
         $description = $request->input('description');
         $user = auth()->user();
         $admin = $user->id;
+        $type = $request->input('type');
+        if ($type == "academic")
         $groupSize = $this->getGroupSize($request);
+        else
+        $groupSize = $request->input('groupSize');
         $isFreeJoin = $request->input('isFreeJoin') == 'free';
         $crud = new Main_group(['groupName' => $groupName, 'description' => $description, 'admin' => $admin, 'groupSize' => $groupSize, 'isFreeJoin' => $isFreeJoin]);
         $crud->save();
@@ -86,6 +100,8 @@ class CreateGroupController extends BaseController
         $crud1->save();
         $crud2 = new Group(['name' => $groupName]);
         $crud2->save();
+        $crud3 = new Member(['userId' => $admin, 'groupId'=> $groupId]);
+        $crud3->save();
         return redirect("/home");
     }
 
