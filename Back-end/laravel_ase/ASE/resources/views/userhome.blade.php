@@ -34,11 +34,8 @@
                 </div>
             </div>
             @endforeach
-        @else
-            <div>You have no group</div>
-        @endif
-
-        @foreach($nonAcademicGroups as $nonAcaGroup)
+            
+            @foreach($nonAcademicGroups as $nonAcaGroup)
             <div class="card">
                 <div class="title-and-description">
                     <div class="card-title-wrapper">
@@ -49,10 +46,13 @@
                 </div>
                 <div class="actions">
                     <div class="card-groupsize">Group size: {{$nonAcaGroup['groupSize']}}</div>
-                    <a href="{{url('/grouppage/'.$nonAcaGroup['groupId'])}}" class="link">Enter</a>
-                <div>
+                    <a href="{{url('/grouppage/'.$nonAcaGroup['groupId'])}}" class="link">Enter ></a>
+                </div>
             </div>
-        @endforeach
+            @endforeach
+        @else
+            <div>You have no group</div>
+        @endif
     </div>
 </div>
 @endsection
